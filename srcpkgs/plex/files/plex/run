@@ -1,0 +1,3 @@
+#!/bin/sh
+#exec chpst -uplex:plex /usr/share/plexmediaserver/start.sh --datadir=/var/lib/plex 2>&1 
+echo "Hi Mom!"

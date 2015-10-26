@@ -1,0 +1,42 @@
+# Template build file for 'plex'.
+pkgname=plex
+pkghash=4ccd2ca
+version=0.9.12.13.1464
+revision=1
+short_desc="Plex Media Server"
+makedepends="rpmextract"
+maintainer="ananteris <ananteris@mailinator.com>"
+system_accounts="plex"
+plex_homedir="/var/lib/plex"
+only_for_arch="x86_64"
+distfiles="https://downloads.plex.tv/plex-media-server/${version}-${pkghash}/plexmediaserver-${version}-${pkghash}.$XBPS_TARGET_MACHINE.rpm>${pkgname}-${version}.rpm"
+checksum=46dcb6a1bf1945d54f951515d1cb07e160ac065c8ab482a2a1778835661cf8bf
+make_dirs="
+ /var/lib/plex 0755 plex plex"
+homepage="http://plex.tv"
+license="plex"
+nostrip=1
+noshlibprovides=1
+restricted=yes
+
+post_extract() {
+	rm -rf etc/
+	rm -rf lib/
+	mkdir $wrksrc
+	mv usr/ $wrksrc/usr
+}
+
+do_install() {
+	mkdir opt/
+	mv usr/lib/plexmediaserver opt/plex
+	rm -rf usr/local
+	rm -rf usr/lib
+	rm -rf usr/bin
+	vsv plex
+	cp -R * ${DESTDIR}
+}
+
+post_install() {
+	# Need this to prevent hooks python_bytecode and remove_empty_dir hooks from running
+	echo "this shouldn't be doing anything"
+}
