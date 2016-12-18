@@ -1,0 +1,17 @@
+# Template file for 'python-pycrypto'
+pkgname=python-pycrypto
+version=2.6.1
+revision=1
+only_for_archs="i686 x86_64 x86_64-musl"
+wrksrc="pycrypto-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="pycrypto.py"
+short_desc="Cryptographic modules for Python"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/pycrypto"
+license="GPL-3"
+distfiles="${PYPI_SITE}/p/pycrypto/pycrypto-${version}.tar.gz"
+checksum=f2ce1e989b272cfcb677616763e0a2e7ec659effa67a88aa92b3a65528f60a3c
