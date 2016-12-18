@@ -1,0 +1,16 @@
+# Template file for 'python-semver'
+pkgname=python-semver
+version=2.7.2
+revision=1
+only_for_archs="i686 x86_64 x86_64-musl"
+wrksrc="semver-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+depends="python"
+pycompile_module="semver.py"
+short_desc="A Cython interface to semver"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/semver"
+license="GPL-3"
+distfiles="${PYPI_SITE}/s/semver/semver-${version}.tar.gz"
+checksum=305ec78e564557d506db6489b87a7b1a14ab1436feeeb8062b53c055455fae8f
