@@ -1,0 +1,21 @@
+# Template file for 'python-semver'
+pkgname=python-semver
+version=2.7.2
+revision=1
+wrksrc="semver-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+depends="python"
+pycompile_module="semver.py"
+short_desc="A Cython interface to semver"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://github.com/k-bx/python-semver"
+license="BSD"
+distfiles="${PYPI_SITE}/s/semver/semver-${version}.tar.gz
+ https://raw.githubusercontent.com/k-bx/python-semver/master/LICENSE.txt"
+checksum="305ec78e564557d506db6489b87a7b1a14ab1436feeeb8062b53c055455fae8f
+ cda490c32e61d3884dc17791fc8078f2a3e564fba98dd18b4dc64eb2720b2b6f"
+
+post_install() {
+	vlicense ${XBPS_SRCDISTDIR}/${pkgname}-${version}/LICENSE.txt
+}
