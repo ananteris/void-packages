@@ -1,0 +1,15 @@
+# Template file for 'python-ledgerblue'
+pkgname=python-ledgerblue
+version=0.1.8
+revision=1
+wrksrc="ledgerblue-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+depends="python python-ECPy python-future python-crypto python-Pillow>=3.4.0_1"
+pycompile_module="ledgerblue.py"
+short_desc="Python library to communicate with Ledger Blue and Nano S"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/ledgerblue"
+license="Apache-2.0"
+distfiles="${PYPI_SITE}/l/ledgerblue/ledgerblue-${version}.tar.gz"
+checksum=bc8d5779e43ee2a7ed8b9babec96316434492c11198af8d1bf658308ffe63bdf
