@@ -1,0 +1,16 @@
+# Template file for 'python-ecpy'
+pkgname=python-ECPy
+version=0.8.1
+revision=1
+noarcha=yes
+wrksrc="ECPy-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+depends="python"
+pycompile_module="ecpy.py"
+short_desc="Pure Phyton Elliptic Curve Library"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/ecpy"
+license="GPL-3"
+distfiles="${PYPI_SITE}/e/ecpy/ECPy-${version}.tar.gz"
+checksum=94781bf82bb25d5becbf9164052f897f31908700e1ef56396355af45ba066629
