@@ -1,0 +1,23 @@
+# Template file for 'trezor-agent'
+pkgname=trezor-agent
+version=0.8.2
+revision=1
+build_style=python2-module
+hostmakedepends="python-setuptools"
+makedepends="libusb-devel"
+depends="libusb python-trezor python-ed25519 python-semver python-keepkey python-ledgerblue python-Cython python-pbkdf2"
+pycompile_module="trezor.py"
+short_desc="SSH/GPG agent for Trezor hardware wallets"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://github.com/romanz/trezor-agent"
+license="GPL-3"
+distfiles="https://github.com/romanz/${pkgname}/archive/v${version}.tar.gz"
+checksum=9ead330a34c50ecf16a0d6dc4725f8e9301aad64a33065e8c9f660a387a1fd0b
+
+post_install() {
+	vdoc README.md
+	vdoc README-GPG.md
+	vdoc README-SSH.md
+	vbin scripts/gpg-init trezor-gpg-init
+	vbin scripts/gpg-shell trezor-gpg-shell
+}
