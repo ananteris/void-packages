@@ -1,0 +1,16 @@
+# Template file for 'python-ctypes'
+pkgname=python-ctypes
+version=1.0.2
+revision=1
+noarch=yes
+wrksrc="ctypes-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+depends="python"
+pycompile_module="ctypes.py"
+short_desc="Create and manipulate C data types in Python"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/ctypes/${version}"
+license="MIT"
+distfiles="http://downloads.sourceforge.net/project/ctypes/ctypes/${version}/ctypes-${version}.tar.gz"
+checksum=ea34ddac33c91ef83389bc0270657f4535aa3a05fd5fd6cc1a9949aacd2efe96
