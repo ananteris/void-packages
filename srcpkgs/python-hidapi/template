@@ -1,0 +1,17 @@
+# Template file for 'python-hidapi'
+pkgname=python-hidapi
+version=0.7.99.post15
+revision=1
+only_for_archs="i686 x86_64 x86_64-musl"
+wrksrc="hidapi-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+makedepends="python-Cython libusb-devel python-devel eudev-libudev eudev-libudev-devel"
+depends="python"
+pycompile_module="hidapi.py"
+short_desc="A Cython interface to hidapi"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/hidapi"
+license="GPL-3"
+distfiles="${PYPI_SITE}/h/hidapi/hidapi-${version}.tar.gz"
+checksum=20b3db524a060fe2415ee4c6439f244300342f91c260bdc84900f57a5ac89427
