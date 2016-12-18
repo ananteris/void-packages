@@ -1,0 +1,22 @@
+# Template file for 'python-mnemonic'
+pkgname=python-mnemonic
+version=0.15
+revision=1
+noarch=yes
+wrksrc="mnemonic-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+depends="python"
+pycompile_module="mnemonic.py"
+short_desc="Implementation of Bitcoin BIP-0039"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/mnemonic"
+license="MIT"
+distfiles="${PYPI_SITE}/m/mnemonic/mnemonic-${version}.tar.gz
+ https://raw.githubusercontent.com/trezor/python-mnemonic/master/LICENSE"
+skip_extraction=LICENSE
+checksum="4c25f036742602181fa8c2deb5f000c7f2c5c3a169c5dd8af8ce1603dffb2652
+ d5e3c7c62a84e80073201e2f6e5130e9e6804fa05f8ac4f8b26a13c7d3969697"
+post_install() {
+	vlicense ${XBPS_SRCDISTDIR}/${pkgname}-${version}/LICENSE
+}
