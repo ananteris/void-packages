@@ -1,0 +1,17 @@
+# Template file for 'python-ed25519'
+pkgname=python-ed25519
+version=1.4
+revision=1
+only_for_archs="i686 x86_64 x86_64-musl"
+wrksrc="ed25519-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="ed25519.py"
+short_desc="A Cython interface to ed25519"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/ed25519"
+license="GPL-3"
+distfiles="${PYPI_SITE}/e/ed25519/ed25519-${version}.tar.gz"
+checksum=2991b94e1883d1313c956a1e3ced27b8a2fdae23ac40c0d9d0b103d5a70d1d2a
