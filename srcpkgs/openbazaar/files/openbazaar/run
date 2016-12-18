@@ -1,0 +1,15 @@
+#!/bin/sh
+exec 2>&1
+
+LOG=/var/log/openbazaar.log
+
+if [ ! -d $LOG ];
+then
+	touch $LOG
+	chown user:user $LOG
+fi
+
+
+cd /etc
+exec > $LOG
+exec chpst -uuser:user openbazaard start

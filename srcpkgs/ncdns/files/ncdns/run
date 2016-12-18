@@ -1,0 +1,5 @@
+#!/bin/sh
+exec 2>&1
+cd /home/user/
+exec > /dev/null
+exec chpst -uuser:user ncdns -conf /etc/ncdns.conf
