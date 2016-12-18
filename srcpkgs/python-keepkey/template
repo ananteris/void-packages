@@ -1,0 +1,16 @@
+# Template file for 'python-keepkey'
+pkgname=python-keepkey
+version=0.7.3
+revision=1
+noarch=yes
+wrksrc="keepkey-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+depends="python"
+pycompile_module="keepkey.py"
+short_desc="Python library for communicating with KeepKey Hardware Wallet"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/keepkey"
+license="GPL-3"
+distfiles="${PYPI_SITE}/k/keepkey/keepkey-${version}.tar.gz"
+checksum=241ce930056a329ab27a043b78e888873305925f680a55dff527a54e1bcaa291
