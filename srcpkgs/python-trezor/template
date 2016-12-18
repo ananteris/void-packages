@@ -1,0 +1,20 @@
+# Template file for 'python-trezor'
+pkgname=python-trezor
+version=0.7.8
+revision=1
+noarch=yes
+only_for_archs="i686 x86_64 x86_64-musl"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+depends="python libusb libusb-devel python-protobuf python-ecdsa python-hidapi python-mnemonic"
+pycompile_module="trezor.py"
+short_desc="Python module for Trezor wallet/U2F device"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/trezor"
+license="GPL-3"
+distfiles="https://github.com/trezor/python-trezor/archive/v${version}.tar.gz"
+checksum=772c6c5ebb68696ded436e8ac1abaf1d86eb845c03c9067bbe976e04b33231ad
+
+post_install() {
+	vinstall ${FILESDIR}/51-trezor.rules 644 usr/lib/udev/rules.d/
+}
