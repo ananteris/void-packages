@@ -1,0 +1,16 @@
+# Template file for 'python-PySocks'
+pkgname=python-PySocks
+version=1.6.5
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="PySocks-${version}"
+hostmakedepends="python-setuptools"
+depends="python"
+pycompile_module="PySocks.py"
+short_desc="A Python SOCKS client module"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/PySocks"
+license="GPL-3"
+distfiles="${PYPI_SITE}/P/PySocks/PySocks-${version}.tar.gz"
+checksum=7962f4d7c76e8414ae168c677a77f19cf8926143911f7e8d37a5d4c4eb910c6f
