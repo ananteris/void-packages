@@ -1,0 +1,17 @@
+# Template file for 'python-ltc_scrypt'
+pkgname=python-ltc_scrypt
+version=1.0
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="ltc_scrypt-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="ltc_scrypt.py"
+short_desc="Bindings for scrypt proof of work used by Litecoin"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/ltc_scrypt"
+license="GPL-3"
+distfiles="${PYPI_SITE}/l/ltc_scrypt/ltc_scrypt-${version}.tar.gz"
+checksum=a6a0bd2fb439c3ddb86b5de32ff65827c58726956dea278ffe27121e078420c1
