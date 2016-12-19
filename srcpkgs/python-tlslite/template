@@ -1,0 +1,16 @@
+# Template file for 'python-tlslite'
+pkgname=python-tlslite
+version=0.4.9
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="tlslite-${version}"
+hostmakedepends="python-setuptools"
+depends="python"
+pycompile_module="tlslite.py"
+short_desc="Python implementation of SSL and TLS"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/tlslite"
+license="GPL-3"
+distfiles="${PYPI_SITE}/t/tlslite/tlslite-${version}.tar.gz"
+checksum=9b9a487694c239efea8cec4454a99a56ee1ae1a5f3af0858ccf8029e2ac2d42d
