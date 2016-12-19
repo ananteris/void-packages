@@ -1,0 +1,17 @@
+# Template file for 'python-coinhash'
+pkgname=python-coinhash
+version=1.1.5
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="coinhash-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel python"
+depends="python"
+pycompile_module="coinhash.py"
+short_desc="Compilation of hash algorithms used by cryptocurrencies"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/coinhash"
+license="GPL-3"
+distfiles="${PYPI_SITE}/c/coinhash/coinhash-${version}.tar.gz"
+checksum=8c31d1a4bc2685162170b3fcc5a5f2797510a52023261e2ba51e8d38c891dd30
