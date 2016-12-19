@@ -1,0 +1,33 @@
+# Template file for 'encompass'
+pkgname=encompass
+version=0.6.0rc2
+revision=1
+build_style=python2-module
+only_for_archs="i686 x86_64 x86_64-musl"
+pycompile_module="Encompass"
+hostmakedepends="python-setuptools git python-PyQt4-devel-tools"
+depends="python-slowaes python-ecdsa python-pbkdf2 python-requests python-qrcode python-protobuf python-tlslite python-coinhash python-pyasn1 python-pyasn1-modules python-ltc_scrypt python-darkcoin_hash python-qrcode python-dnspython python-sip python-PyQt4 python-PySocks python-mnemonic python-hidapi"
+short_desc="Multi-coin cryptocurrency wallet based off of electrum"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://maza.club/encompass"
+license="GPL-3"
+_commit=dd4b22d454b4cd185857568e97f6feedf632bf56
+distfiles="https://github.com/mazaclub/encompass/archive/${_commit}.tar.gz"
+wrksrc="${pkgname}-${_commit}"
+checksum=6b7b7c886d03fffc5f23bb0d60773d29b0cc6d5e4648b637d139abf1ccab45c3
+
+post_build() {
+	pyrcc4 icons.qrc -o gui/qt/icons_rc.py
+	pyrcc4 data/themes/theme_icons.qrc -o gui/qt/theme_icons_rc.py
+}
+
+post_install() {
+	# There is a bug in the RC installer that fails to copy one file
+	# out of each directory.. this is a fix
+	_site_pkg="usr/lib/python2.7/site-packages"
+	cp lib/chains/bitcoin_chainkey.py ${DESTDIR}/${_site_pkg}/chainkey/chains/
+	cp lib/ripemd.py ${DESTDIR}/${_site_pkg}/chainkey/
+	cp plugins/autoexport.py ${DESTDIR}/${_site_pkg}/chainkey_plugins/
+	cp gui/android.py ${DESTDIR}/${_site_pkg}/chainkey_gui/
+	cp gui/qt/qrwindow.py ${DESTDIR}/${_site_pkg}/chainkey_gui/qt/
+}
