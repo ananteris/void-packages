@@ -1,0 +1,27 @@
+# Template file for 'bitcointools-git'
+pkgname=python-bitcointools
+version=1.1.42
+revision=1
+noarch=yes
+build_style=python2-module
+hostmakedepends="python-setuptools"
+makedepends="python-devel git"
+conflicts="python-bitcoin"
+depends="python"
+pycompile_module="bitcoin.py"
+short_desc="Python library for Bitcoin signatures and transactions"
+aintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://github.com/vbuterin/pybitcointools"
+license="MIT"
+
+do_fetch() {
+	local _githash="a82b00686b51677b047098e8968074a783e054a1"
+	git clone https://github.com/vbuterin/pybitcointools ${pkgname}-${version}
+	cd ${wrksrc}
+	git reset --hard ${_githash}
+}
+
+post_install() {
+	vlicense LICENSE
+}
+
