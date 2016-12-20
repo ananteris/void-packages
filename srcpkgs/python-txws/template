@@ -1,0 +1,17 @@
+# Template file for 'python-txws'
+pkgname=python-txws
+version=0.9.1
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="txWS-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="txws.py"
+short_desc="Twisted WebSockets wrapper"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/txws"
+license="GPL-3"
+distfiles="${PYPI_SITE}/t/txws/txWS-${version}.tar.gz"
+checksum=cb93086095d04a5d70f53a75053f7df478ff37e972c3637fb55ca4a9e6b94679
