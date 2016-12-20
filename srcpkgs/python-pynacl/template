@@ -1,0 +1,17 @@
+# Template file for 'python-pynacl'
+pkgname=python-pynacl
+version=1.0.1
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="PyNaCl-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel libffi-devel"
+depends="python libsodium"
+pycompile_module="pynacl.py"
+short_desc="Python binding to the Networking and Cryptographic (NaCl) library"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/pynacl"
+license="GPL-3"
+distfiles="${PYPI_SITE}/p/pynacl/PyNaCl-${version}.tar.gz"
+checksum=d21d7a7358a85fb9b9ddadfbd1176c40fe199334fe2202881255e77f6d3773f4
