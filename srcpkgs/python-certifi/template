@@ -1,0 +1,17 @@
+# Template file for 'python-certifi'
+pkgname=python-certifi
+version=2016.9.26
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="certifi-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="certifi.py"
+short_desc="Python package for providing Mozilla's CA Bundle"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/certifi"
+license="GPL-3"
+distfiles="${PYPI_SITE}/c/certifi/certifi-${version}.tar.gz"
+checksum=8275aef1bbeaf05c53715bfc5d8569bd1e04ca1e8e69608cc52bcaac2604eb19
