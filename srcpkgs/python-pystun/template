@@ -1,0 +1,17 @@
+# Template file for 'python-pystun'
+pkgname=python-pystun
+version=0.1.0
+revision=1
+noarch=yes
+wrksrc="pystun-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="pystun.py"
+short_desc="A Python STUN client for getting NAT type and external IP"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/pystun"
+license="GPL-3"
+distfiles="${PYPI_SITE}/p/pystun/pystun-${version}.tar.gz"
+checksum=787a2d1c1328ae8ac31152a0d6d96b2f02ab8677febdc25e463c2c8fee34679f
