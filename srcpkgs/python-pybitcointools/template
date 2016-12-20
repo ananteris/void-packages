@@ -1,0 +1,18 @@
+# Template file for 'python-pybitcointools'
+# this package probably should not exist
+pkgname=python-pybitcointools
+version=1.1.44
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="bitcointools-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="bitcointools.py"
+short_desc="Python Bitcoin Tools"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/bitcointools"
+license="GPL-3"
+distfiles="${PYPI_SITE}/b/bitcointools/bitcointools-${version}.tar.gz"
+checksum=2a6006db98ee7b9b50ceda6f308f7d8e26e2bb8dbe4c3c7ad9cbe468e8f2982e
