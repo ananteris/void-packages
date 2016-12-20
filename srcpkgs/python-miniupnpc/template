@@ -1,0 +1,17 @@
+# Template file for 'python-miniupnpc'
+pkgname=python-miniupnpc
+version=1.9
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="miniupnpc-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python miniupnpc"
+pycompile_module="miniupnpc.py"
+short_desc="miniupnpc interface for Python"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/miniupnpc"
+license="GPL-3"
+distfiles="${PYPI_SITE}/m/miniupnpc/miniupnpc-${version}.tar.gz"
+checksum=498b35c5443e8de566f3a4de4bceae28fbf6e08ed59afb5ffd516d0bb718bca6
