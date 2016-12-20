@@ -1,0 +1,16 @@
+# Template file for 'python-bitcoinlib'
+pkgname=python-bitcoinlib
+version=0.7.0
+revision=1
+noarch=yes
+build_style=python2-module
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="bitcoinlib.py"
+short_desc="Bitcoin and Other cryptocurrency Library"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/bitcoinlib"
+license="GPL-3"
+distfiles="${PYPI_SITE}/p/python-bitcoinlib/python-bitcoinlib-${version}.tar.gz"
+checksum=fe7e7e91598349d1781213b80891cc1243c1e7b5c816b39d989f9ed3075e851a
