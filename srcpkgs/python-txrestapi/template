@@ -1,0 +1,17 @@
+# Template file for 'python-txrestapi'
+pkgname=python-txrestapi
+version=0.2
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="txrestapi-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="txrestapi.py"
+short_desc="Easing the creation of REST API services in Python"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/txrestapi"
+license="GPL-3"
+distfiles="${PYPI_SITE}/t/txrestapi/txrestapi-${version}.tar.gz"
+checksum=3e432b88bc3788255a4d873e72c1ef6e9d0883306e95cd36c79542e792a08e31
