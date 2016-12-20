@@ -1,0 +1,17 @@
+# Template file for 'python-txrudp'
+pkgname=python-txrudp
+version=0.5.1
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="txrudp-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="txrudp.py"
+short_desc="A Twisted extension implementing RUDP"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/txrudp"
+license="GPL-3"
+distfiles="${PYPI_SITE}/t/txrudp/txrudp-${version}.tar.gz"
+checksum=d9e3393e0f9a8febcdca7ce72310c5b07d9eee1cb32d0ca6ec98f68048831078
