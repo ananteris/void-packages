@@ -1,7 +1,7 @@
 # Template file for 'python-pbkdf2'
 pkgname=python-pbkdf2
 version=1.3
-revision=1
+revision=2
 noarch=yes
 wrksrc="pbkdf2-${version}"
 build_style=python2-module
@@ -10,10 +10,12 @@ hostmakedepends="python-setuptools"
 short_desc="Password-based key derivation function PBKDF2 (Python2)"
 maintainer="Charles E. Lehner <cel@celehner.com>"
 homepage="http://www.dlitz.net/software/python-pbkdf2/"
-license="MIT"
+license="custom"
 distfiles="${PYPI_SITE}/p/pbkdf2/pbkdf2-${version}.tar.gz"
 checksum=ac6397369f128212c43064a2b4878038dab78dab41875364554aaf2a684e6979
 
-do_install() {
-	vlicense README.txt
+post_install() {
+	tail -n 22 README.txt > LICENSE.txt
+	vdoc README.txt
+	vlicense LICENSE.txt
 }
