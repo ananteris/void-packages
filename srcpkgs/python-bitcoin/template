@@ -1,0 +1,17 @@
+# Template file for 'python-bitcoin'
+pkgname=python-bitcoin
+version=1.1.42
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="bitcoin-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python"
+pycompile_module="bitcoin.py"
+short_desc="Python Bitcoin Tools"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/bitcoin"
+license="GPL-3"
+distfiles="${PYPI_SITE}/b/bitcoin/bitcoin-${version}.tar.gz"
+checksum=11ba70bd9e1c764f6bb2c4bd4c7fbebd5c9053c73f4d4325b00a98869a8b7236
