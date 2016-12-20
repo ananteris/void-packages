@@ -1,0 +1,17 @@
+# Template file for 'python-gnupg'
+pkgname=python-gnupg
+version=2.0.2
+revision=1
+noarch=yes
+build_style=python2-module
+wrksrc="gnupg-${version}"
+hostmakedepends="python-setuptools"
+makedepends="python-devel"
+depends="python gnupg"
+pycompile_module="gnupg.py"
+short_desc="A Python wrapper for GnuPG"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/gnupg"
+license="GPL-3"
+distfiles="${PYPI_SITE}/g/gnupg/gnupg-${version}.tar.gz"
+checksum=67fa884d7700914ef623721c38c38fbbd9659825b65bcc81884a1772f12713df
