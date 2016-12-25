@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /home/user/
+exec chpst -uuser:user bitcoind -datadir=/home/user/.bitcoin
