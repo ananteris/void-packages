@@ -1,0 +1,27 @@
+# Template file for 'monero'
+pkgname=monero
+version=0.10.1
+revision=1
+build_style=cmake
+hostmakedepends="pkg-config"
+makedepends="libressl-devel boost-devel libldns-devel libunwind-devel"
+short_desc="Cryptocurrency based on CryptoNote"
+maintainer="ananteris <ananteris@protonmail.ch>"
+license="Proprietary license"
+homepage="https://monero.org"
+distfiles="https://github.com/${pkgname}-project/${pkgname}/archive/v${version}.tar.gz"
+checksum=7fec47217c5515d5fe943dc04854cd3157f09da64e98d3ccdf3c19c7da5cf8d1
+repository=nonfree
+
+do_install() {
+	# these fail to get installed by cmake.sh
+	vlicense LICENSE
+	vbin build/bin/monero-blockchain-export
+	vbin build/bin/monero-blockchain-import
+	vbin build/bin/monerod
+	vbin build/bin/monero-utils-deserialize
+	vbin build/bin/monero-wallet-cli
+	vbin build/bin/monero-wallet-rpc
+	mkdir ${DESTDIR}/usr/lib/
+	cp build/lib/libwallet.a ${DESTDIR}/usr/lib/
+}
