@@ -1,0 +1,17 @@
+# Template file for 'btcd'
+pkgname=btcd
+version=0.12.0
+revision=1
+build_style=go
+hostmakedepends="git"
+go_get=yes
+go_package="github.com/btcsuite/btcd"
+wrksrc="btcd-BTCD_0_12_0_BETA"
+short_desc="Alternative full node bitcoin implementation written in go"
+maintainer="ananteris <ananteris@protonmail.ch>"
+license="ISC"
+homepage="https://github.com/btcsuite/btcd"
+
+post_install() {
+	vlicense _build-btcd-xbps/src/github.com/btcsuite/btcd/LICENSE
+}
