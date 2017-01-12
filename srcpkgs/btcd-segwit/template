@@ -1,0 +1,18 @@
+# Template file for 'btcd-segwit'
+pkgname=btcd-segwit
+version=0.12.0
+revision=1
+build_style=go
+hostmakedepends="git"
+conflicts="btcd"
+go_get=yes
+go_package="github.com/roasbeef/btcd"
+wrksrc="btcd-BTCD_0_12_0_BETA"
+short_desc="SegWit enabled Bitcoin node"
+maintainer="ananteris <ananteris@protonmail.ch>"
+license="ISC"
+homepage="https://github.com/roasbeef/btcd"
+
+post_install() {
+	vlicense _build-btcd-segwit-xbps/src/github.com/roasbeef/btcd/LICENSE
+}
