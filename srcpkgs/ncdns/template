@@ -1,7 +1,7 @@
 # Template file for 'ncdns'
 pkgname=ncdns
 version=0.0.2
-revision=1
+revision=2
 build_style=go
 hostmakedepends="git"
 makedepends="libcap-devel"
@@ -15,4 +15,5 @@ checksum="a9457216f5bbc3c3b41e0538b78f8f67ad9a04304743a352a7325eef6af4a439"
 
 post_install() {
 	vconf ${GOPATH}/src/github.com/hlandau/ncdns/_doc/ncdns.conf.example  ncdns.conf
+	vdoc README.md
 }
