@@ -1,0 +1,27 @@
+# Template file for 'zcash'
+pkgname=zcash
+version=1.0.4
+revision=1
+makedepends="boost zlib-devel libgomp-devel"
+hostmakedepends="wget perl python m4 libtool autoconf automake pkg-config"
+short_desc="Anonymous digital cryptocurrency"
+maintainer="ananteris <ananteris@protonmail.ch>"
+license="MIT"
+homepage="https://z.cash/"
+distfiles="https://github.com/${pkgname}/${pkgname}/archive/v${version}.tar.gz"
+checksum=18df95b1958e71c9dc773b4d3953df2b6d7b5fbfcd2677be1190c9e03eff5d44
+
+do_build() {
+	./zcutil/build.sh ${makejobs}
+}
+
+do_install() {
+	for i in doc/*.md; do
+		vdoc $i
+	done
+	vbin src/zcashd
+	vbin src/zcash-cli
+	vbin src/zcash-gtest
+	vbin src/zcash-tx
+	vlicense COPYING
+}
