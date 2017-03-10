@@ -1,0 +1,20 @@
+# Template file for 'python-pyaes'
+pkgname=python-pyaes
+version=1.6.0
+revision=1
+noarch=yes
+wrksrc="pyaes-${version}"
+build_style=python2-module
+hostmakedepends="python-setuptools"
+depends="python"
+pycompile_module="pyaes.py"
+short_desc="Pure-Python Implementation of the AES block-cipher"
+maintainer="ananteris <ananteris@protonmail.ch>"
+homepage="https://pypi.python.org/pypi/pyaes"
+license="MIT"
+distfiles="${PYPI_SITE}/p/pyaes/pyaes-${version}.tar.gz"
+checksum=9cd5a54d914b1eebfb14fcb490315214b6a0304d9f1bb47e90d1d8e0b15ce92e
+
+post_install() {
+	vlicense LICENSE.txt
+}
